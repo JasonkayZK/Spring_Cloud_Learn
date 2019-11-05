@@ -21,6 +21,8 @@ eureka:
 #            defaultZone: http://zk:zk137818@localhost:8761/eureka/
     instance:
         prefer-ip-address: true
+        metadata-map:
+            my-metadata: 我自定义的元数据
 
 
 logging:                                # 配置日志级别，让hibernate打印出执行的SQL

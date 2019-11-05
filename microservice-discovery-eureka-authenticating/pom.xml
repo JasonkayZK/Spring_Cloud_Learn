@@ -3,9 +3,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>top.jasonkayzk</groupId>
-    <artifactId>microservice-provider-user</artifactId>
+    <artifactId>microservice-discovery-eureka-authenticating</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <packaging>jar</packaging>
 
     <!-- 引入spring boot的依赖 -->
     <parent>
@@ -20,23 +19,13 @@
     </properties>
 
     <dependencies>
-        <!-- Spring Boot起步依赖 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
+            <artifactId>spring-boot-starter-security</artifactId>
         </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-jpa</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-actuator</artifactId>
-        </dependency>
-
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+            <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
         </dependency>
 
         <!-- JDK 9之后不再自带jaxb -->
@@ -55,28 +44,6 @@
             <artifactId>jaxb-api</artifactId>
             <version>2.4.0-b180725.0427</version>
         </dependency>
-
-        <!-- Client Filter 依赖-->
-        <dependency>
-            <groupId>com.sun.jersey</groupId>
-            <artifactId>jersey-client</artifactId>
-            <version>1.19.1</version>
-        </dependency>
-
-        <!-- H2 数据库依赖 -->
-        <dependency>
-            <groupId>com.h2database</groupId>
-            <artifactId>h2</artifactId>
-        </dependency>
-
-        <!-- Lombok 依赖 -->
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>1.18.10</version>
-            <scope>provided</scope>
-        </dependency>
-
     </dependencies>
 
     <!-- 引入spring cloud的依赖 -->
@@ -101,5 +68,4 @@
             </plugin>
         </plugins>
     </build>
-
 </project>
