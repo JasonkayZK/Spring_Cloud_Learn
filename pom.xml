@@ -10,8 +10,11 @@
     <packaging>pom</packaging>
 
     <modules>
+        <module>microservice-consumer-movie</module>
+        <module>microservice-discovery-eureka</module>
         <module>microservice-simple-consumer-movie</module>
         <module>microservice-simple-provider-user</module>
+        <module>microservice-discovery-eureka</module>
     </modules>
 
 
