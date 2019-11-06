@@ -21,6 +21,9 @@
         <module>microservice-provider-user-my-metadata</module>
         <module>microservice-provider-user-ip</module>
         <module>microservice-consumer-movie-ribbon</module>
+        <module>microservice-consumer-movie-ribbon-customizing</module>
+        <module>microservice-consumer-movie-ribbon-customizing-properties</module>
+        <module>microservice-consumer-movie-without-eureka</module>
     </modules>
 
 </project>
