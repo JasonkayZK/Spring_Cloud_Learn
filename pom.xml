@@ -40,6 +40,10 @@
         <module>microservice-hystrix-turbine</module>
         <module>microservice-consumer-movie-ribbon-hystrix-turbine-mq</module>
         <module>microservice-hystrix-turbine-mq</module>
+        <module>microservice-gateway-zuul</module>
+        <module>microservice-gateway-zuul-regexp</module>
+        <module>microservice-gateway-zuul-filter</module>
+        <module>microservice-gateway-zuul-fallback</module>
     </modules>
 
 </project>
