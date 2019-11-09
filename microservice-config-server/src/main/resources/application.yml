@@ -14,3 +14,7 @@ spring:
                     uri: https://github.com/JasonkayZK/Spring_Cloud_Learn/ # 配置Git仓库的地址
                     username:  # Git仓库账号
                     password:  # Git仓库密码
+
+management:
+    security:
+        enabled: false
