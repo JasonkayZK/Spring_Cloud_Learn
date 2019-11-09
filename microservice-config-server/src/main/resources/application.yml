@@ -1,0 +1,16 @@
+server:
+    port: 8080
+
+
+spring:
+    application:
+        name: microservice-config-server
+
+    cloud:
+        config:
+            server:
+                git:
+                    skipSslValidation: true
+                    uri: https://github.com/JasonkayZK/Spring_Cloud_Learn/ # 配置Git仓库的地址
+                    username:  # Git仓库账号
+                    password:  # Git仓库密码

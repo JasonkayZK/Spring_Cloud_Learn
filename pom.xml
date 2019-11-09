@@ -47,6 +47,9 @@
         <module>microservice-sidecar</module>
         <module>microservice-sidecar-client-ribbon</module>
         <module>microservice-gateway-zuul-aggregation</module>
+        <module>microservice-config-server</module>
+        <module>microservice-config-client</module>
+        <module>microservice-config-server-health</module>
     </modules>
 
 </project>
