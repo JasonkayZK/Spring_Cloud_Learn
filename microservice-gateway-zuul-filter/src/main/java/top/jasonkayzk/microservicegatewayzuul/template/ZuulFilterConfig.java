@@ -1,4 +1,4 @@
-package top.jasonkayzk.microservicegatewayzuul.config;
+package top.jasonkayzk.microservicegatewayzuul.template;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

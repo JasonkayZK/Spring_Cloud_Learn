@@ -44,6 +44,9 @@
         <module>microservice-gateway-zuul-regexp</module>
         <module>microservice-gateway-zuul-filter</module>
         <module>microservice-gateway-zuul-fallback</module>
+        <module>microservice-sidecar</module>
+        <module>microservice-sidecar-client-ribbon</module>
+        <module>microservice-gateway-zuul-aggregation</module>
     </modules>
 
 </project>
