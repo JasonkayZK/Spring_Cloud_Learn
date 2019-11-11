@@ -1,0 +1,19 @@
+server:
+    port: 8010
+spring:
+    application:
+        name: microservice-consumer-movie
+    sleuth:
+        sampler:
+            percentage: 1.0
+    rabbitmq:
+        host: localhost
+        port: 5672
+        username: guest
+        password: guest
+    zipkin:
+        rabbitmq:
+            queue: zipkin
+logging:
+    level:
+        org.springframework.cloud.sleuth: DEBUG
