@@ -11,6 +11,7 @@
 
     <modules>
         <module>microservice-discovery-eureka-maven-plugin</module>
+        <module>microservice-discovery-eureka-docker-compose</module>
     </modules>
 
     <build>
