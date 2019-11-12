@@ -10,6 +10,12 @@
     <packaging>pom</packaging>
 
     <modules>
+        <module>microservice-discovery-eureka-compose</module>
+        <module>microservice-provider-user-compose</module>
+        <module>microservice-consumer-movie-ribbon-hystrix-compose</module>
+        <module>microservice-gateway-zuul-compose</module>
+        <module>microservice-hystrix-turbine-compose</module>
+        <module>microservice-hystrix-dashboard-compose</module>
     </modules>
 
     <build>

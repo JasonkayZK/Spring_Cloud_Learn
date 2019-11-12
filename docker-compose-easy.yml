@@ -1,0 +1,18 @@
+version: '3' # 表示该docker-compose.yml文件使用的是Version 2 file format
+services: # Version 2 file format的固定写法，为project定义服务。
+  microservice-discovery-eureka-compose: # 指定服务名称
+    image: jasonkay/microservice-discovery-eureka-compose:0.0.1-SNAPSHOT # 指定服务所使用的镜像
+    ports: # 暴露端口信息
+      - "8761:8761"
+  microservice-provider-user:
+    image: jasonkay/microservice-provider-user-compose:0.0.1-SNAPSHOT
+  microservice-consumer-movie-ribbon-hystrix:
+    image: jasonkay/microservice-consumer-movie-ribbon-hystrix-compose:0.0.1-SNAPSHOT
+  microservice-gateway-zuul:
+    image: jasonkay/microservice-gateway-zuul-compose:0.0.1-SNAPSHOT
+  microservice-hystrix-turbine:
+    image: jasonkay/microservice-hystrix-turbine-compose:0.0.1-SNAPSHOT
+  microservice-hystrix-dashboard:
+    image: jasonkay/microservice-hystrix-dashboard-compose:0.0.1-SNAPSHOT
+
+# 最简单的配置方式，等价于docker-compose.yml

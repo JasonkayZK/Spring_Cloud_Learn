@@ -1,0 +1,146 @@
+server:
+    port: 8040
+
+spring:
+    application:
+        name: microservice-gateway-zuul
+
+eureka:
+    client:
+        service-url:
+            defaultZone: http://discovery:8761/eureka/
+    instance:
+        prefer-ip-address: true
+
+management:
+    security:
+        enabled: false
+
+# 防止大文件超时!
+hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 60000
+
+ribbon:
+    ConnectTimeout: 3000
+    ReadTimeout: 60000
+
+zuul:
+    ribbon-isolation-strategy: thread
+    thread-pool:
+        use-separate-thread-pools: true
+        thread-pool-key-prefix: prefix-
+
+# 1. 自定义指定微服务的访问路径
+#zuul:
+#    routes:
+#        microservice-provider-user: /user/**
+
+
+# 2. 忽略指定的微服务
+#zuul:
+#    ignored-services: microservice-provider-user,microservice-consumer-movie
+
+
+# 3. 忽略所有微服务, 只路由指定微服务
+#zuul:
+#    ignored-services: '*' # 使用'*'可忽略所有微服务
+#    routes:
+#        microservice-provider-user: /user/**
+
+
+# 4. 同时指定微服务的serviceId和对应路径
+#zuul:
+#    routes:
+#        user-route: # 该配置方式中，user-route只是给路由一个名称，可以任意起名。
+#            service-id: microservice-provider-user
+#            path: /user/** # service-id对应的路径
+
+
+# 5. 同时指定path和url
+#zuul:
+#    routes:
+#        user-route: # 该配置方式中，user-route只是给路由一个名称，可以任意起名。
+#            url: http://localhost:8000/ # 指定的url
+#            path: /user/** # url对应的路径。
+
+
+
+# 6.同时指定path和URL，并且不破坏Zuul的Hystrix、Ribbon特性。
+#zuul:
+#    routes:
+#        user-route:
+#            path: /user/**
+#            service-id: microservice-provider-user
+#ribbon:
+#    eureka:
+#        enabled: false    # 禁用掉ribbon的eureka使用。详见：http://cloud.spring.io/spring-cloud-static/Camden.SR3/#_example_disable_eureka_use_in_ribbon
+#microservice-provider-user:
+#    ribbon:
+#        listOfServers: localhost:8000,localhost:8001
+
+
+# 7. 见子模块microservice-gateway-zuul-reg-exp
+
+
+# 8.1 为Zuul添加映射前缀1
+#zuul:
+#    prefix: /api
+#    strip-prefix: false
+#    routes:
+#        microservice-provider-user: /user/**
+#logging:
+#    level:
+#        com.netflix: DEBUG
+# 访问Zuul的/api/microservice-provider-user/1路径，请求将会被转发到microservice-provider-user的/api/1，可查看日志打印，有助于理解。
+
+
+# 8.2 为Zuul添加映射前缀2
+#zuul:
+#    routes:
+#        microservice-provider-user:
+#            path: /user/**
+#            strip-prefix: false
+#logging:
+#    level:
+#        com.netflix: DEBUG
+
+# 这样访问Zuul的/user/1路径, 请求将被转发到microservice-privider-user的/user/1
+
+
+# 9. 忽略某些路径
+#zuul:
+#    ignoredPatterns: /**/admin/** # 忽略所有包括/admin/的路径
+#    routes:
+#        microservice-provider-user: /user/**
+
+
+# 10. 本地转发
+#zuul:
+#    routes:
+#        route-name:
+#            path: /path-a/**
+#            url: forward:/path-b
+
+
+
+# 11. 敏感Header的设置
+# 为microservice-provider-user指定敏感Header
+#zuul:
+#    routes:
+#        microservice-provider-user:
+#            path: /users/**
+#            sensitive-headers: Cookie, Set-Cookie, Authorization
+#            url: https://downstream
+
+
+# 全局指定敏感Header
+#zuul:
+#    sensitive-headers: Cookie, Set-Cookie, Authorization # 默认是Cookie, Set-Cookie, Authorization
+
+
+# 12. 忽略Hearer
+# 丢弃一些Header, 指定后Header1, 和Header2不会传播到其他微服务中!
+#zuul:
+#    ignored-headers: Header1, Header2
+
+
+
